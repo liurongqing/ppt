@@ -8,23 +8,22 @@ url: https://github.com/liurongqing/ppt
 
 #### 构建高可用的、易开发、优雅的后台管理系统
 
+By liurongqing {.text-intro}
+
 </slide>
 
 <slide class="aligncenter">
-# 三大框架
+## :fa-superpowers: 三大框架后台选择
 
 :::flexblock {.clients}
 ![](./image/nodeppt_react.svg)
 
 ### React
 
-dva + Antd
-
-create-react-app + Antd
-
-Ant Design Pro
-
-webpack + Antd
+- `dva + Antd`
+- `create-react-app + Antd`
+- `Ant Design Pro`
+- `webpack + Antd（推荐）`
 
 ---
 
@@ -32,9 +31,10 @@ webpack + Antd
 
 ### Vue
 
-Vue-CLI + Element(iView)
-
-vue-element-admin
+- `Vue-CLI + Element（推荐）`
+- `Vue-CLI + iView`
+- `vue-element-admin`
+- `vue-admin-template`
 
 ---
 
@@ -42,61 +42,93 @@ vue-element-admin
 
 ### Angular
 
-Angular + Material
+- `Angular + Material`
+- `angular-material-app`
+  :::
+
+</slide>
+
+<slide class="aligncenter">
+####  :fa-code: 三个框架对于 ANTD 的按钮的代码演示
+---
+:::flexblock {.clients}
+
+![](./image/nodeppt_react.svg)
+
+### Ant Design
+
+![](./image/nodeppt_button_react.png)
+
+---
+
+![](./image/nodeppt_vue.png)
+
+### Ant Design Vue
+
+![](./image/nodeppt_button_vue.png)
+
+---
+
+![](./image/nodeppt_angular.png)
+
+### NG-ZORRO
+
+![](./image/nodeppt_button_angular.png)
+
 :::
 
 </slide>
 
 <slide :class="size-50">
-## 基于 React 构造系统几个核心点
+##  :fa-bold: 构建系统几个核心点
 
 ---
 
-1. 构建工具（webpack){.shake}
-2. 目录结构{.shake}
-3. TypeScript{.shake}
-4. 代码规范（Prettier + EditorConfig）{.shake}
-5. 路由管理（react-router-dom）{.shake}
-6. 常用辅助函数 {.shake}
+- :构建工具\::{.text-label} `Grunt`, `Gulp`, `Webpack`, `Rollup`, `Parcel`
+- :TypeScript\::{.text-label} `类型检测`, `友好提示`, `直观的api`
+- :代码规范\::{.text-label} `JSLint`, `ESLint`, `TSLint`, `Prettier`
+- :路由管理\::{.text-label} `react-router-dom`, `@angular/router`, `vue-router`
+- :常用辅助函数\::{.text-label} `clone`, `getQueryString`, `tree`, `unique`, `uuid`
+- :目录结构\::{.text-label} `MVC式`, `脚手架`
+- :开发文档\::{.text-label} `框架`, `规范`, `模板`, `业务`
+- :单元测试\::{.text-label} `JEST`, `Mocha`
 
-{.text-cols.build}
+{.description}
 
 </slide>
 
 <slide :class="size-80">
 
-:::column {.vertical-align}
-
-## 构建工具（webpack）
-
-编译 ES6 代码，打包压缩代码，提供本地开发环境。
+## :fa-building-o: 构建工具（webpack）
 
 1. 创建编写 `package.json` 文件
 2. 安装配置 `webpack`
-3. dllPlugin 使用
+3. webpack dllPlugin 配置与使用
 
 ---
 
-```bash
-yarn init
-```
+![](./image/nodeppt_webpack1.png)
 
-```javascript
-{
-    "scripts": {
-        "start": "webpack-dev-server --open --config build/webpack.dev.js",
-        "prod": "webpack --config build/webpack.prod.js",
-        "dll": "node build/webpack.dll.js"
-    }
-}
-```
-
-:::
 </slide>
 
-<slide>
+<slide class="aligncenter">
+## webpack dllPlugin 使用（配置）
+---
+
+![](./image/nodeppt_dll1.png)
+</slide>
+
+<slide class="aligncenter">
+## webpack dllPlugin 使用（使用）
+
+---
+
+![](./image/nodeppt_dll2.png)
+
+</slide>
+
+<slide :class="text-pull">
 :::card
-## 目录结构
 - :fa-folder: build
   - :fa-folder: dll
   - :fa-file: webpack.config.js
@@ -113,17 +145,17 @@ yarn init
 
 ---
 
-![](https://source.unsplash.com/rCOWMC8qf8A/)
+![](./image/nodeppt_book.jpg)
 :::
 </slide>
 
 <slide>
 :::card
-![](https://source.unsplash.com/rCOWMC8qf8A/)
+![](./image/nodeppt_typescript.jpg)
 
 ---
 
-## TypeScript
+## :fa-windows: TypeScript
 
 1. 类型约束，友好提示
    ![](./image/nodeppt_typescript1.png)
@@ -137,7 +169,7 @@ yarn init
    </slide>
 
 <slide>
-## 代码规范（Prettier + EditorConfig）
+## :fa-code: 代码规范（Prettier + EditorConfig）
 :::gallery
 ![](./image/nodeppt_prettierrc.png)
 
@@ -157,7 +189,7 @@ yarn init
 </slide>
 
 <slide>
-## 路由管理（react-router-dom）
+## :fa-link: 路由管理（react-router-dom）
 :::gallery
 ![](./image/nodeppt_router1.png)
 
@@ -184,12 +216,12 @@ yarn init
 </slide>
 
 <slide>
-## 常用辅助函数
+## :fa-question-circle: 常用辅助函数
 ---
 :::shadowbox
 ## clone 函数
 ```javascript
-export default () => { }
+export default data => { }
 ```
 ---
 ## getQueryString 函数
@@ -199,21 +231,23 @@ export default name => { }
 ---
 ## tree 函数（无限分类）
 ```javascript
-export default () => { }
+export default (data, pid = '0') => { }
 ```
 
 :::
 </slide>
 
 <slide class="aligncenter">
-# 简易、优雅的后台系统（完整）
+## :fa-book: 简易、优雅的后台系统（完整）
 
 </slide>
 
 <slide class="aligncenter">
-# 谢谢
+# Think You!
 
 [:fa-github: Github](https://github.com/liurongqing/ppt){.button.ghost.animated.delay-1s.fadeInUp}
 </slide>
+
+```
 
 ```
