@@ -99,10 +99,7 @@ yarn init
 ## 目录结构
 - :fa-folder: build
   - :fa-folder: dll
-  - :fa-file: webpack.common.js
-  - :fa-file: webpack.dev.js
-  - :fa-file: webpack.prod.js
-  - :fa-file: webpack.dll.js
+  - :fa-file: webpack.config.js
 - :fa-folder: docs
 - :fa-folder: src
   - :fa-folder: constants
@@ -191,63 +188,19 @@ yarn init
 ---
 :::shadowbox
 ## clone 函数
-
 ```javascript
-// clone.js
-export default (data: any) => JSON.parse(JSON.stringify(data));
+export default () => { }
 ```
-
 ---
-
 ## getQueryString 函数
-
 ```javascript
-export default (name: String) => {
-  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i') // 匹配目标参数
-  var result = window.location.search.substr(1).match(reg) // 对querystring匹配目标参数
-  if (result != null) {
-    return decodeURIComponent(result[2])
-  } else {
-    return null
-  }
-}
+export default name => { }
 ```
-
-<!-- ---
-
+---
 ## tree 函数（无限分类）
-
 ```javascript
-export default ({ data, pid = '0', columns }: any) => {
-  const newData = clone(data)
-  const getTree = (data: any, pid: any) => {
-    let tree = []
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].parentId === pid) {
-        data[i].children = getTree(data, data[i]._id)
-        if (data[i].children.length == 0) {
-          delete data[i].children
-        }
-        if (columns) {
-          for (let j in columns) {
-            if (Array.isArray(columns[j]) && columns[j].length > 0) {
-              columns[j].forEach((v: any) => {
-                data[i][v] = data[i][j]
-              })
-            } else {
-              data[i][columns[j]] = data[i][j]
-            }
-          }
-        }
-
-        tree.push(data[i])
-      }
-    }
-    return tree
-  }
-  return getTree(newData, pid)
-}
-​``` -->
+export default () => { }
+```
 
 :::
 </slide>
