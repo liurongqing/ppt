@@ -18,7 +18,13 @@ url: https://github.com/liurongqing/ppt
 
 ### React
 
-Collaboration with the Acme team to design their mobile apps.
+dva + Antd
+
+create-react-app + Antd
+
+Ant Design Pro
+
+webpack + Antd
 
 ---
 
@@ -26,7 +32,9 @@ Collaboration with the Acme team to design their mobile apps.
 
 ### Vue
 
-Collaboration with the Acme team to design their mobile apps.
+Vue-CLI + Element(iView)
+
+vue-element-admin
 
 ---
 
@@ -34,7 +42,7 @@ Collaboration with the Acme team to design their mobile apps.
 
 ### Angular
 
-Collaboration with the Acme team to design their mobile apps.
+Angular + Material
 :::
 
 </slide>
@@ -239,7 +247,7 @@ export default ({ data, pid = '0', columns }: any) => {
   }
   return getTree(newData, pid)
 }
-``` -->
+​``` -->
 
 :::
 </slide>
@@ -254,3 +262,5 @@ export default ({ data, pid = '0', columns }: any) => {
 
 [:fa-github: Github](https://github.com/liurongqing/ppt){.button.ghost.animated.delay-1s.fadeInUp}
 </slide>
+
+```
