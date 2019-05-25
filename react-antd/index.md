@@ -1,6 +1,8 @@
 title: 《 React + Antd 》
 speaker: liurongqing
 url: https://github.com/liurongqing/ppt
+css: 
+    - ./css/custom_main.css
 
 <slide class="aligncenter">
 
@@ -79,7 +81,7 @@ By liurongqing {.text-intro}
 
 </slide>
 
-<slide :class="size-50">
+<slide>
 ##  :fa-bold: 构建系统几个核心点
 
 ---
@@ -112,14 +114,14 @@ By liurongqing {.text-intro}
 </slide>
 
 <slide class="aligncenter">
-## webpack dllPlugin 使用（配置）
+## webpack dllPlugin（配置）
 ---
 
 ![](./image/nodeppt_dll1.png)
 </slide>
 
 <slide class="aligncenter">
-## webpack dllPlugin 使用（使用）
+## webpack dllPlugin（使用）
 
 ---
 
@@ -237,15 +239,37 @@ export default (data, pid = '0') => { }
 :::
 </slide>
 
+<slide class="aligncenter size-90">
+## :fa-edit: 编写 constants（1/3）
+---
+![](./image/nodeppt_frame_container.jpg)
+</slide>
+
+<slide class="aligncenter size-80">
+## :fa-edit: 编写 components（2/3）
+---
+![](./image/nodeppt_frame_component.jpg)
+</slide>
+
+<slide class="aligncenter size-90">
+## :fa-edit: 编写 services（3/3）
+---
+![](./image/nodeppt_frame_services.jpg)
+</slide>
+
 <slide class="aligncenter">
-## :fa-book: 简易、优雅的后台系统（完整）
+## :fa-book: 简易后台系统图
+
+---
+
+![](./image/full.jpg)
 
 </slide>
 
 <slide class="aligncenter">
 # Think You!
 
-[:fa-github: Github](https://github.com/liurongqing/ppt){.button.ghost.animated.delay-1s.fadeInUp}
+[:fa-github: Github](https://github.com/liurongqing/ppt/tree/gh-pages){.button.ghost.animated.delay-1s.fadeInUp}
 </slide>
 
 ```

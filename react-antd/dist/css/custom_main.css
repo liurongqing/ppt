@@ -1,0 +1,5 @@
+@charset "UTF-8";
+section, .slide {
+    min-height: calc(100vh - 4.8rem)!important;
+    max-height: calc(100vh)!important;
+}
