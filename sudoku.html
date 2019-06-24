@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #result {
+        width: 100px;
+      }
+      #main,
+      #view {
+        margin-top: 50px;
+      }
+      .box {
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .row {
+        display: flex;
+      }
+      .row input {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>
+        <select id="sudokuType" onchange="onhandleTypeChange(this)">
+          <option value="4">四宫格</option>
+          <option value="6">六宫格</option>
+          <option value="9">九宫格</option>
+        </select>
+        <input type="text" id="result" />
+        <button id="copy">copy</button>
+      </div>
+      <div id="main"></div>
+      <div id="view"></div>
+    </div>
+    <script>
+      let arr = [];
+      let LOCAL_KEY = "SUDOKU_TYPE";
+      let type = localStorage.getItem(LOCAL_KEY) || sudokuType.value;
+      sudokuType.value = type;
+
+      function getTemplateData(v) {
+          console.log(v)
+        return Array.from({ length: v }, () => Array.from({ length: v }));
+      }
+
+      arr = getTemplateData(type);
+      buildTemplate(arr);
+
+      // 编译模块
+      function buildTemplate(arrData) {
+        let html = "";
+        arrData.map((v, k) => {
+          html += "<div class='row'>";
+          v.map((vv, kk) => {
+            html +=
+              "<input onchange='onhandleChange(event, " + k + "," + kk + ")'>";
+          });
+          html += "</div>";
+        });
+        main.innerHTML = html;
+      }
+
+      // 监听类型改变
+      window.onhandleTypeChange = function(self) {
+        localStorage.setItem(LOCAL_KEY, self.value);
+        arr = getTemplateData(self.value);
+        buildTemplate(arr);
+      };
+
+      // 监听数据改变
+      window.onhandleChange = function(event, row, col) {
+        arr[row][col] = event.target.value;
+        result.value = JSON.stringify(arr);
+        view.innerHTML = JSON.stringify(arr);
+      };
+
+      // copy
+      copy.onclick = function() {
+        result.select();
+        document.execCommand("copy");
+      };
+    </script>
+  </body>
+</html>
