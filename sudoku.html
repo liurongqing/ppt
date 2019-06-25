@@ -48,11 +48,14 @@
     <script>
       let arr = [];
       let LOCAL_KEY = "SUDOKU_TYPE";
+      let focusObj;
       let type = localStorage.getItem(LOCAL_KEY) || sudokuType.value;
       sudokuType.value = type;
 
+      // 默认第一个焦点
+
       function getTemplateData(v) {
-          console.log(v)
+        console.log(v);
         return Array.from({ length: v }, () => Array.from({ length: v }));
       }
 
@@ -66,11 +69,20 @@
           html += "<div class='row'>";
           v.map((vv, kk) => {
             html +=
-              "<input onchange='onhandleChange(event, " + k + "," + kk + ")'>";
+              "<input type='text' oninput='onhandleInput(" +
+              k +
+              ", " +
+              kk +
+              ")' onchange='onhandleChange(event, " +
+              k +
+              "," +
+              kk +
+              ")'>";
           });
           html += "</div>";
         });
         main.innerHTML = html;
+        document.querySelectorAll("#main input")[0].focus();
       }
 
       // 监听类型改变
@@ -85,6 +97,14 @@
         arr[row][col] = event.target.value;
         result.value = JSON.stringify(arr);
         view.innerHTML = JSON.stringify(arr);
+      };
+
+      window.onhandleInput = function(row, col) {
+        // console.log(row, col);
+        focusObj = document.querySelectorAll("#main input")[
+          row * sudokuType.value + col + 1
+        ];
+        focusObj && focusObj.focus();
       };
 
       // copy
