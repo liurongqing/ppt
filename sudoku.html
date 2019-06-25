@@ -10,7 +10,8 @@
         width: 100px;
       }
       #main,
-      #view {
+      #view,
+      #clear {
         margin-top: 50px;
       }
       .box {
@@ -43,6 +44,7 @@
         <button id="copy">copy</button>
       </div>
       <div id="main"></div>
+      <button id="clear">clear</button>
       <div id="view"></div>
     </div>
     <script>
@@ -55,7 +57,6 @@
       // 默认第一个焦点
 
       function getTemplateData(v) {
-        console.log(v);
         return Array.from({ length: v }, () => Array.from({ length: v }));
       }
 
@@ -100,17 +101,20 @@
       };
 
       window.onhandleInput = function(row, col) {
-        // console.log(row, col);
         focusObj = document.querySelectorAll("#main input")[
           row * sudokuType.value + col + 1
         ];
         focusObj && focusObj.focus();
       };
 
-      // copy
       copy.onclick = function() {
         result.select();
         document.execCommand("copy");
+      };
+
+      clear.onclick = function() {
+        arr = getTemplateData(sudokuType.value);
+        buildTemplate(arr);
       };
     </script>
   </body>
