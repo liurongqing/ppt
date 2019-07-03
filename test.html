@@ -15,21 +15,21 @@
         background: red;
       }
       #xx {
-          opacity: 0;
+        opacity: 0;
+        visibility: hidden;
       }
     </style>
   </head>
   <body>
     <label for="xx">
-      <div class="aa"></div>
+      <div class="aa">1</div>
       <input type="date" id="xx" />
     </label>
     <script>
-    
-        document.querySelector('.aa').onclick = function(){
-            // xx.focus()
-            xx.click()
-        }
+      document.querySelector(".aa").onclick = function() {
+        // xx.focus()
+        xx.click();
+      };
     </script>
   </body>
 </html>
