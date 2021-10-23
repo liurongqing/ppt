@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: $GITHUB_HEAD_REF 123
+      - name: GITHUB_HEAD_REF 123
         run: echo "$GITHUB_HEAD_REF" 11 ${{GITHUB_HEAD_REF}} 22
       - name: Install dependencies
         run: npm install
