@@ -30,8 +30,8 @@ jobs:
           echo "GITHUB_BASE_REF is :"  $GITHUB_BASE_REF
       - name: Into Project Root
         run: |
-          cd ${GITHUB_REF##*/}
-        # run: cd javascript-tips
+          # cd ${GITHUB_REF##*/}
+          cd ./javascript-tips
       - name: Install dependencies
         run: npm install
       - name: Build
