@@ -29,9 +29,9 @@ jobs:
           echo "GITHUB_HEAD_REF is :"  $GITHUB_HEAD_REF
           echo "GITHUB_BASE_REF is :"  $GITHUB_BASE_REF
       - name: Into Project Root
-        run: |
-          # cd ${GITHUB_REF##*/}
-          cd ./javascript-tips
+        run: cd javascript-tips
+      - name: pppwwwddd
+        run: pwd
       - name: Install dependencies
         run: npm install
       - name: Build
