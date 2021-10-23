@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: '14'
       - name: GITHUB_HEAD_REF 123
-        run: echo "$GITHUB_HEAD_REF" 11 ${{GITHUB_HEAD_REF}} 22
+        run: echo "11 $GITHUB_HEAD_REF 22"
       - name: Install dependencies
         run: npm install
       - name: Build
