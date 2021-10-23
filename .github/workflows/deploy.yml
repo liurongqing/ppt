@@ -44,6 +44,6 @@ jobs:
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          build_dir: liurongqingtest
+          build_dir: dist
         # env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
