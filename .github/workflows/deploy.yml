@@ -9,6 +9,7 @@ jobs:
         with:
           node-version: '14'
       - name: GITHUB_HEAD_REF 123
+        run: npm install
       - name: Install dependencies
         run: npm install
       - name: Build
