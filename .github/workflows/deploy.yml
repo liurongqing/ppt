@@ -25,6 +25,7 @@ jobs:
           echo "GITHUB_WORKSPACE is :"  $GITHUB_WORKSPACE
           echo "GITHUB_SHA is :"  $GITHUB_SHA
           echo "GITHUB_REF is :"  $GITHUB_REF
+          echo "GITHUB_BRANCH is :" ${GITHUB_REF##*/}
           echo "GITHUB_HEAD_REF is :"  $GITHUB_HEAD_REF
           echo "GITHUB_BASE_REF is :"  $GITHUB_BASE_REF
       - name: Install dependencies
